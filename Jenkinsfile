@@ -10,7 +10,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat '"C:\\Program Files\\Python314\\python.exe" -m pytest -v'
+               bat 'set PYTHONPATH=C:\\JenkinsPythonPackages && "C:\\Program Files\\Python314\\python.exe" -m pytest -v'
             }
         }
     }
