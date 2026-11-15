@@ -1,5 +1,20 @@
-stage('Test') {
-    steps {
-        bat '"C:\\Program Files\\Python314\\python.exe" -m pytest -v'
+pipeline {
+agent any
+
+```
+stages {
+    stage('Checkout') {
+        steps {
+            checkout scm
+        }
     }
+
+    stage('Test') {
+        steps {
+            bat '"C:\\Program Files\\Python314\\python.exe" -m pytest -v'
+        }
+    }
+}
+```
+
 }
