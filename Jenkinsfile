@@ -1,20 +1,17 @@
 pipeline {
-agent any
+    agent any
 
-```
-stages {
-    stage('Checkout') {
-        steps {
-            checkout scm
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat '"C:\\Program Files\\Python314\\python.exe" -m pytest -v'
+            }
         }
     }
-
-    stage('Test') {
-        steps {
-            bat '"C:\\Program Files\\Python314\\python.exe" -m pytest -v'
-        }
-    }
-}
-```
-
 }
